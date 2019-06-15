@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.3878350878162953 -0.9004288907341675 -0.19700699832686924 5.255919967001966
-  position 1.8127775983696501 1.2788633756729015 1.5436789417503234
+  orientation 0.6236708834543003 -0.7592082642397373 -0.18611136623381688 5.534170312118679
+  position 1.6225368509374942 1.8364456464334231 2.2662933179822855
 }
 TexturedBackground {
 }
@@ -52,6 +52,13 @@ Solid {
           ]
         }
         Transform {
+          translation 0.15 0.15 0.3
+          rotation 0 0 1 1.5707996938995747
+          children [
+            USE CY
+          ]
+        }
+        Transform {
           translation 0.3 0.15 0
           children [
             USE SH_SPHERE
@@ -77,7 +84,21 @@ Solid {
           ]
         }
         Transform {
+          translation 0.15 -0.15 0.3
+          rotation 0 0 1 1.5707996938995747
+          children [
+            USE CY
+          ]
+        }
+        Transform {
           translation 0 0.15 0.15
+          rotation 1 0 0 1.5708003061004252
+          children [
+            USE CY
+          ]
+        }
+        Transform {
+          translation 0.3 0.15 0.15
           rotation 1 0 0 1.5708003061004252
           children [
             USE CY
@@ -108,11 +129,44 @@ Solid {
             USE CY
           ]
         }
+        Transform {
+          translation 0.3 -0.15 0.15
+          rotation 1 0 0 1.5707996938995747
+          children [
+            USE CY
+          ]
+        }
+        Transform {
+          translation 0.3 0 0.3
+          children [
+            USE CY
+          ]
+        }
+        Transform {
+          translation 0.3 0.15 0.3
+          children [
+            USE SH_SPHERE
+          ]
+        }
+        Transform {
+          translation 0.3 -0.15 0.3
+          children [
+            USE SH_SPHERE
+          ]
+        }
       ]
     }
   ]
   boundingObject USE GR_FRAME
   physics Physics {
+    density -1
     mass 1
+    centerOfMass [
+      0.15000000000000002 -3.1856517242222724e-18 0.15000000000000002
+    ]
+    inertiaMatrix [
+      0.5476591865347185 0.7436945681183169 0.5476591865347437
+      -3.757330933537584e-08 -0.19603538158400313 4.0989064722246615e-08
+    ]
   }
 }
