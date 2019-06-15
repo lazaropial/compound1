@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0 1 0 0
-  position 0.15 0.6500000000000006 2.15289094217783
+  orientation 0.3878350878162953 -0.9004288907341675 -0.19700699832686924 5.255919967001966
+  position 1.8127775983696501 1.2788633756729015 1.5436789417503234
 }
 TexturedBackground {
 }
@@ -12,7 +12,7 @@ TexturedBackgroundLight {
 Floor {
 }
 Solid {
-  translation 0 0.8 0
+  translation 0 0.5 0
   children [
     DEF GR_FRAME Group {
       children [
@@ -76,10 +76,43 @@ Solid {
             USE CY
           ]
         }
+        Transform {
+          translation 0 0.15 0.15
+          rotation 1 0 0 1.5708003061004252
+          children [
+            USE CY
+          ]
+        }
+        Transform {
+          translation 0 0.15 0.3
+          children [
+            USE SH_SPHERE
+          ]
+        }
+        Transform {
+          translation 0 0 0.3
+          children [
+            USE CY
+          ]
+        }
+        Transform {
+          translation 0 -0.15 0.3
+          children [
+            USE SH_SPHERE
+          ]
+        }
+        Transform {
+          translation 0 -0.15 0.15
+          rotation 1 0 0 1.5707996938995747
+          children [
+            USE CY
+          ]
+        }
       ]
     }
   ]
   boundingObject USE GR_FRAME
   physics Physics {
+    mass 1
   }
 }
