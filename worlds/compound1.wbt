@@ -3,7 +3,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation 0 1 0 0
-  position -5.411813683335461e-34 0.7999999999999995 3.2238251749303104
+  position 0.15 0.6500000000000006 2.15289094217783
 }
 TexturedBackground {
 }
@@ -16,7 +16,7 @@ Solid {
   children [
     DEF GR_FRAME Group {
       children [
-        Shape {
+        DEF CY Shape {
           appearance PBRAppearance {
             baseColor 0.4588235294117647 0.3137254901960784 0.4823529411764706
           }
@@ -28,7 +28,7 @@ Solid {
         Transform {
           translation 0 0.15 0
           children [
-            Shape {
+            DEF SH_SPHERE Shape {
               appearance PBRAppearance {
                 baseColor 0.807843137254902 0.3607843137254902 0
               }
@@ -38,8 +38,48 @@ Solid {
             }
           ]
         }
+        Transform {
+          translation 0 -0.15 0
+          children [
+            USE SH_SPHERE
+          ]
+        }
+        Transform {
+          translation 0.15 0.15 0
+          rotation 0 0 1 1.5707996938995747
+          children [
+            USE CY
+          ]
+        }
+        Transform {
+          translation 0.3 0.15 0
+          children [
+            USE SH_SPHERE
+          ]
+        }
+        Transform {
+          translation 0.3 0 0
+          children [
+            USE CY
+          ]
+        }
+        Transform {
+          translation 0.3 -0.15 0
+          children [
+            USE SH_SPHERE
+          ]
+        }
+        Transform {
+          translation 0.15 -0.15 0
+          rotation 0 0 1 1.5707996938995747
+          children [
+            USE CY
+          ]
+        }
       ]
     }
   ]
   boundingObject USE GR_FRAME
+  physics Physics {
+  }
 }
